@@ -11,11 +11,11 @@ export const MoviesList = ({ movies }) => {
   return (
     <>
       <MovieList>
-        {movies.map(({ id, title, poster_path }) => (
+        {movies.map(({ id, title, poster_path, original_name }) => (
           <MovieItem key={id}>
             <MovieLink to={`/movies/${id}`}>
               <MovieImg src={imageBaseUrl.concat(poster_path)} alt="" />
-              <MovieTitle>{title}</MovieTitle>
+              <MovieTitle>{title ?? original_name}</MovieTitle>
             </MovieLink>
           </MovieItem>
         ))}
