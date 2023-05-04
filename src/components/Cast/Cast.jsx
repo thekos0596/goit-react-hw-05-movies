@@ -31,7 +31,7 @@ const Cast = () => {
           <CastImg
             src={
               profile_path === null
-                ? `http://dummyimage.com/150x225/99cccc.gif&text=${name}`
+                ? `http://dummyimage.com/150x225/99cccc.gif&text=No+Foto`
                 : imgBaseUrl.concat(profile_path)
             }
             alt=""

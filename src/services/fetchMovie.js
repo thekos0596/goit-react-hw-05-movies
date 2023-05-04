@@ -33,7 +33,7 @@ export const getMovieReview = async id => {
 };
 export const getMovieByName = async name => {
   const { data } = await axios.get(
-    `search/movie/?${searchParams}&query=${name}`
+    `/search/movie?${searchParams}&query=${name}`
   );
 
   return data.results;
