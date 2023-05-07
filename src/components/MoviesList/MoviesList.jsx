@@ -6,6 +6,7 @@ import {
   MovieImg,
   MovieTitle,
 } from './MoviesList.styled';
+import PropTypes from 'prop-types';
 
 export const MoviesList = ({ movies }) => {
   const imageBaseUrl = 'https://image.tmdb.org/t/p/w500/';
@@ -25,4 +26,8 @@ export const MoviesList = ({ movies }) => {
       </MovieList>
     </>
   );
+};
+
+MoviesList.propTypes = {
+  movies: PropTypes.array,
 };

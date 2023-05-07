@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types';
+import { MovieCardWrapper } from './MovieCard.styled';
+
 const MovieCard = ({ movie }) => {
   const { poster_path, title, release_date, vote_average, overview, genres } =
     movie;
@@ -9,7 +12,7 @@ const MovieCard = ({ movie }) => {
   const genresList = genres.map(genre => genre.name).join(' ');
 
   return (
-    <div>
+    <MovieCardWrapper>
       <img src={imgUrl} alt={title} width="300" />
       <div>
         <h2>
@@ -28,8 +31,12 @@ const MovieCard = ({ movie }) => {
           <span>{genresList}</span>
         </p>
       </div>
-    </div>
+    </MovieCardWrapper>
   );
 };
 
 export default MovieCard;
+
+MovieCard.propTypes = {
+  movie: PropTypes.object,
+};

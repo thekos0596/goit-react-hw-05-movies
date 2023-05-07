@@ -1,8 +1,8 @@
 import MovieCard from 'components/MovieCard/MovieCard';
 import { useEffect, useState, useRef } from 'react';
-import { useParams, Outlet, Link } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import { getMovieDetails } from 'services/fetchMovie';
-import { AdditionalInfo } from './MovieDetails.styled';
+import { BtnBack, AdditionalInfo } from './MovieDetails.styled';
 import { useLocation } from 'react-router-dom';
 
 const MovieDetails = () => {
@@ -21,7 +21,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Link to={backLinkLocationRef.current}>Go Back</Link>
+      <BtnBack to={backLinkLocationRef.current}>Go Back</BtnBack>
       <MovieCard movie={movieDetails} />
       <AdditionalInfo to={'cast'}>Cast</AdditionalInfo>
       <AdditionalInfo to={'reviews'}>Reviews</AdditionalInfo>
