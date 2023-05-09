@@ -6,7 +6,7 @@ import {
   MovieImg,
   MovieTitle,
 } from './MoviesList.styled';
-import PropTypes from 'prop-types';
+import PropTypes, { object } from 'prop-types';
 
 export const MoviesList = ({ movies }) => {
   const imageBaseUrl = 'https://image.tmdb.org/t/p/w500/';
@@ -29,5 +29,9 @@ export const MoviesList = ({ movies }) => {
 };
 
 MoviesList.propTypes = {
-  movies: PropTypes.array,
+  movies: PropTypes.arrayOf(object),
+  id: PropTypes.number,
+  title: PropTypes.string,
+  poster_path: PropTypes.string,
+  original_name: PropTypes.string,
 };

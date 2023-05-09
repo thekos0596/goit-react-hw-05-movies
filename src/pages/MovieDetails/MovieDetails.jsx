@@ -1,9 +1,8 @@
 import MovieCard from 'components/MovieCard/MovieCard';
-import { useEffect, useState, useRef } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { useEffect, useState, useRef, Suspense } from 'react';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from 'services/fetchMovie';
 import { BtnBack, AdditionalInfo } from './MovieDetails.styled';
-import { useLocation } from 'react-router-dom';
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -25,7 +24,9 @@ const MovieDetails = () => {
       <MovieCard movie={movieDetails} />
       <AdditionalInfo to={'cast'}>Cast</AdditionalInfo>
       <AdditionalInfo to={'reviews'}>Reviews</AdditionalInfo>
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

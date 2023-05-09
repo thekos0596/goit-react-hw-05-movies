@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const SearchBar = ({ onChange, onSubmit }) => {
   return (
     <form onSubmit={onSubmit}>
@@ -8,3 +10,8 @@ const SearchBar = ({ onChange, onSubmit }) => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+};
